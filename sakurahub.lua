@@ -262,7 +262,6 @@ ESPSection:AddToggle({ Name = "Tracers", Flag = "TracersToggle", Callback = func
 ESPSection:AddToggle({ Name = "Usernames", Flag = "UsernamesToggle", Callback = function(v) usernamesEnabled = v end })
 ESPSection:AddColor({ Name = "ESP Color", Flag = "ESPColorPicker", Color = espColor, Callback = function(v) espColor = v end })
 
--- Server
 local ServerSection = MainTab:CreateSection({ Name = "Server", Side = "Right" })
 ServerSection:AddButton({
     Name = "Server Hop",
