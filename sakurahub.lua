@@ -256,6 +256,12 @@ MovementSection:AddButton({
     end
 })
 
+local ESPSection = MainTab:CreateSection({ Name = "ESP Settings", Side = "Left" })
+ESPSection:AddToggle({ Name = "Player ESP", Flag = "ESPEnable", Callback = function(v) espEnabled = v end })
+ESPSection:AddToggle({ Name = "Tracers", Flag = "TracersToggle", Callback = function(v) tracersEnabled = v end })
+ESPSection:AddToggle({ Name = "Usernames", Flag = "UsernamesToggle", Callback = function(v) usernamesEnabled = v end })
+ESPSection:AddColor({ Name = "ESP Color", Flag = "ESPColorPicker", Color = espColor, Callback = function(v) espColor = v end })
+
 -- Server
 local ServerSection = MainTab:CreateSection({ Name = "Server", Side = "Right" })
 ServerSection:AddButton({
@@ -284,13 +290,6 @@ ServerSection:AddButton({
     end
 })
 ServerSection:AddButton({ Name = "Rejoin", Callback = function() TeleportService:Teleport(PlaceId) end })
-
--- ESP
-local ESPSection = MainTab:CreateSection({ Name = "ESP Settings", Side = "Left" })
-ESPSection:AddToggle({ Name = "Player ESP", Flag = "ESPEnable", Callback = function(v) espEnabled = v end })
-ESPSection:AddToggle({ Name = "Tracers", Flag = "TracersToggle", Callback = function(v) tracersEnabled = v end })
-ESPSection:AddToggle({ Name = "Usernames", Flag = "UsernamesToggle", Callback = function(v) usernamesEnabled = v end })
-ESPSection:AddColor({ Name = "ESP Color", Flag = "ESPColorPicker", Color = espColor, Callback = function(v) espColor = v end })
 
 Window:SetOpen(true)
 library:LoadTheme("kura")
