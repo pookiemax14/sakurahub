@@ -244,6 +244,10 @@ local MainTab = Window:CreateTab({ Name = "Main" })
 local FunTab = Window:CreateTab({ Name = "Fun" })
 local ServerTab = Window:CreateTab({ Name = "Server" })
 
+local ServerSection = ServerTab:CreateSection({ Name = "Server Actions", Side = "Left" })
+ServerSection:AddButton({ Name = "Server Hop", Callback = function() serverHop() end })
+ServerSection:AddButton({ Name = "Rejoin", Callback = function() TeleportService:Teleport(PlaceId) end })
+
 -- Fun Tab
 local FunSection = FunTab:CreateSection({ Name = "Fun Features", Side = "Left" })
 FunSection:AddToggle({
@@ -300,11 +304,6 @@ MovementSection:AddButton({
 		end
 	end
 })
-
--- Server Tab (new)
-local ServerSection = ServerTab:CreateSection({ Name = "Server Actions", Side = "Left" })
-ServerSection:AddButton({ Name = "Server Hop", Callback = function() serverHop() end })
-ServerSection:AddButton({ Name = "Rejoin", Callback = function() TeleportService:Teleport(PlaceId) end })
 
 -- ESP
 local ESPSection = MainTab:CreateSection({ Name = "ESP Settings", Side = "Left" })
