@@ -282,10 +282,13 @@ MovementSection:AddSlider({
 	Flag = "SpeedSlider",
 	Value = walkSpeedValue,
 	Min = 16,
-	Max = 55,
+	Max = 100,
 	Precise = 1,
 	Callback = function(v) walkSpeedValue = v if walkSpeedEnabled then setWalkSpeed(v) end end,
 })
+MovementSection:AddLabel({ Name = "use invis cloak once !!!" })
+
+
 MovementSection:AddButton({
 	Name = "Teleport Up",
 	Callback = function()
@@ -315,5 +318,4 @@ ESPSection:AddColor({ Name = "ESP Color", Flag = "ESPColorPicker", Color = espCo
 Window:SetOpen(true)
 library:LoadTheme("kura")
 library:SendNotification("Loaded Sakura Hub", 5)
-
 
